@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: azure-dns-repro-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: azure-dns-repro-api
+  template:
+    metadata:
+      labels:
+        app: azure-dns-repro-api
+    spec:
+      containers:
+        - name: azure-dns-repro-api
+          image: azure-dns-repro-api:latest
+          ports:
+            - containerPort: 8080
