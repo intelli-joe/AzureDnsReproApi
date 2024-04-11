@@ -14,6 +14,13 @@ spec:
     spec:
       containers:
         - name: azure-dns-repro-api
-          image: azure-dns-repro-api:latest
+          image: ghcr.io/intelli-joe/azure-dns-repro-api:latest
           ports:
             - containerPort: 8080
+          env:
+            - name: tenantId
+              value: ""
+            - name: clientId
+              value: ""
+            - name: clientSecret
+              value: ""
